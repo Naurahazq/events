@@ -18,3 +18,20 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix' => 'activitys'], function(){
+    Route::get('index', 'ActivityController@index')->name('activitys');
+
+    Route::get('create', 'ActivityController@create')->name('activitys.create');
+});
+
+Route::group(['prefix' => 'registers'], function(){
+    Route::get('index', 'Register\RegisterController@index')->name('registers');
+    Route::get('ambil-formulir', 'Register\RegisterController@create')->name('registers.ambil-formulir');
+});
+Route::group(['prefix' => 'users'], function(){
+    Route::get('index', 'User\UserController@index')->name('users');
+});
+
+
+
