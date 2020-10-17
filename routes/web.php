@@ -26,6 +26,8 @@ Route::group(['prefix' => 'activity'], function(){
     
     Route::get('tampil-formEdit' , 'ActivityController@edit')->name('activity.tampil-formEdit');
 
+    Route::post('save', 'ActivityController@store')->name('activity.save');
+
     
 });
 
