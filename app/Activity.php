@@ -12,7 +12,7 @@ class Activity extends Model
     public function generateCode()
     {
         $tanggal = getdate();
-        $tahun = substr($tanggal['year'], 2,2);
+        $tahun = substr ($tanggal['year'], 2);
         
         $_kode  = "ABEV/camp-c/$tahun";
 
@@ -28,8 +28,8 @@ class Activity extends Model
             $kode = "$_kode".str_pad($last, 3, '0', STR_PAD_LEFT);
         }
 
-        //return $kode;
-        dd($kode);
+        return $kode;
+        
     }
 
 }

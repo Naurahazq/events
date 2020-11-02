@@ -24,9 +24,14 @@ Route::group(['prefix' => 'activity'], function(){
 
     Route::get('create', 'ActivityController@create')->name('activity.create');
     
-    Route::get('tampil-formEdit' , 'ActivityController@edit')->name('activity.tampil-formEdit');
+    Route::get('tampil-formEdit/{activity}' , 'ActivityController@edit')->name('activity.tampil-formEdit');
+    
+    Route::patch('update/{activity}' , 'ActivityController@update')->name('activity.update');
 
-    Route::post('save', 'ActivityController@store')->name('activity.save');
+    Route::post('save', 'ActivityController@store')->name('kegiatan.save');
+
+    Route::delete('delete/{activity}', 'ActivityController@destroy')->name('activity.delete');
+
 
     
 });

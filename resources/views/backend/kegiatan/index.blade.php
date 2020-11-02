@@ -18,25 +18,30 @@
                         <thead>
                             <tr>
                                 <th>Kode kegiatan</th>
-                                <th>Nama Kegiatan</th>
                                 <th>Tanggal</th>
-                                <th>Informasi</th>
                                 <th>Status</th>
                                 <th>Option</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($activitys as $activity)
                             <tr>
-                                <td>Netflix77</td>
-                                <td>Harry Potter</td>
-                                <td>12/08/20</td>
-                                <td>Film</td>
-                                <td>OSH</td>
+                                <td><a href="{{route('activity.tampil-formEdit',   $activity->id)}}" class="btn btn-outline-primary btn-sm">{{$activity->code_activity}}</a></td>
+                                <td>{{$activity->date}}</td>
+                                <td>{{$activity->status}}</td>
                                 <td>
-                                    <a href="{{route('activity.tampil-formEdit')}}" class="btn btn-outline-primary btn-sm">Edit</a>
-                                    <a href="http://" class="btn btn-outline-danger btn-sm">Hapus</a>
+                                    <img src="{{asset('storage/'.$activity->image)}}" alt="" class="rounded" weight="25" height="25">
+                                </td>
+                                <td>{{$activity->capacity}}</td>
+                                <td>
+                                    <form action="{{route('activity.delete', $activity->id)}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                        <button class="btn btn-outline-danger btn-sm">Hapus</button>
+                                    </form>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
