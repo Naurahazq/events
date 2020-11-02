@@ -43,6 +43,13 @@ Route::group(['prefix' => 'registers'], function(){
 
     Route::get('tampil-hasil' , 'Register\RegistersController@show')->name('registers.tampil-hasil');
 
+});
+
+Route::group(['prefix' => 'users'], function(){
+    Route::get('index', 'Users\UsersController@index')->name('users');
+
+    Route::get('index', 'Kegiatan\KegiatanController@index')->name('users.Kegiatan.index');
+    
 }); 
 
 

@@ -8,7 +8,7 @@ section('content')
                 <div class="card border-0">
                     <div class="card-body">
                         <div class="mb-2 pt-2">
-                            <a href="http://" class="btn btn-info">Add New User</a>
+                            <a href="{{route('users.Kegiatan.index')}}" class="btn btn-info">Add New User</a>
                         </div>
                         <div>
                             <table class="table table-striped">
@@ -27,8 +27,8 @@ section('content')
                                         <td>siswa</td>
                                         <td>
                                             <form action="">
-                                                <a href="http://" class="btn btn-sm btn-info">Show</a>
-                                                <button href="http://" class="btn btn-sm btn-danger">Delete</button>
+                                                <a href="" class="btn btn-sm btn-info">Show</a>
+                                                <button href="" class="btn btn-sm btn-danger">Delete</button>
                                             </form>
                                         </td>
                                     </tr>
